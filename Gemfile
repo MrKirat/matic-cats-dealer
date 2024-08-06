@@ -1,8 +1,13 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
-ruby '3.1.2'
+ruby file: '.ruby-version'
 
 gem 'rails', '~> 6.1'
+gem 'rubocop'
+gem 'rubocop-rails'
+gem 'rubocop-rspec'
 gem 'sqlite3', '~> 1.4'
 
 gem 'puma'

@@ -1,6 +1,4 @@
 language: ruby
-rvm:
- - 3.1.2
 sudo: false
 cache: bundler
 install:
