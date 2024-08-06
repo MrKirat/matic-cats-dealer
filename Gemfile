@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5.2'
-gem 'sqlite3'
+ruby '3.1.2'
+
+gem 'rails', '~> 6.1'
+gem 'sqlite3', '~> 1.4'
 
 gem 'puma'
 gem 'rest-client'
