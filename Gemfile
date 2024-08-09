@@ -8,6 +8,7 @@ ruby file: '.ruby-version'
 gem 'rails', '~> 6.1.7', '>= 6.1.7.8'
 
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'httparty'
 gem 'jbuilder', '~> 2.7'
 gem 'puma', '~> 5.0'
 gem 'sqlite3', '~> 1.4'
