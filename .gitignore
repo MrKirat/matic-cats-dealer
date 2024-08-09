@@ -33,3 +33,6 @@
 # Ignore .env files
 *.env
 !example.env
+
+# Ignore rspec file for tracking failed tests
+spec/examples.txt
