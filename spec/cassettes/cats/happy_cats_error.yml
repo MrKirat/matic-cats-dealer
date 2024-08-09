@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://nh7b1g9g23.execute-api.us-west-2.amazonaws.com/dev/cats/xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - CloudFront
+      Date:
+      - Thu, 08 Aug 2024 23:59:58 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '167'
+      Connection:
+      - keep-alive
+      Location:
+      - https://nh7b1g9g23.execute-api.us-west-2.amazonaws.com/dev/cats/xml
+      X-Cache:
+      - Redirect from cloudfront
+      Via:
+      - 1.1 6981deb00b7d2b47ddb74618e351a7a6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW51-P5
+      X-Amz-Cf-Id:
+      - Z-uLRbHO511wI6K_rl8AGT4EQlfIcJCGslXKHBIcsjUWy20Ue5IvdQ==
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body>\r\n<center><h1>301
+        Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+  recorded_at: Thu, 08 Aug 2024 23:59:58 GMT
+- request:
+    method: get
+    uri: https://nh7b1g9g23.execute-api.us-west-2.amazonaws.com/dev/cats/xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 500
+      message: "Internal Server Error"
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2131'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 08 Aug 2024 23:59:59 GMT
+      X-Amzn-Trace-Id:
+      - Root=1-66b55bff-78c1ec007fa7f1bf68ac4888;Parent=4b5449df0e71099f;Sampled=0;lineage=9c3a1074:0
+      X-Amzn-Requestid:
+      - 29f2f431-442e-468d-aafe-9b5b00d1ee92
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Amz-Apigw-Id:
+      - cNtP7EvrvHcEqQQ=
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 1bfc9084713feba821bd9079b11eda18.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW51-P5
+      X-Amz-Cf-Id:
+      - B6O3eYVirIJH7a-3aDrlyq3Dk1TSABUsOieuszNtVJQemsb_lCLd5A==
+  recorded_at: Thu, 08 Aug 2024 23:59:59 GMT
+recorded_with: VCR 6.2.0

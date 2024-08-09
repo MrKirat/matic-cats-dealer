@@ -1,0 +1,96 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://nh7b1g9g23.execute-api.us-west-2.amazonaws.com/dev/cats/json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - CloudFront
+      Date:
+      - Thu, 08 Aug 2024 23:29:58 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '167'
+      Connection:
+      - keep-alive
+      Location:
+      - https://nh7b1g9g23.execute-api.us-west-2.amazonaws.com/dev/cats/json
+      X-Cache:
+      - Redirect from cloudfront
+      Via:
+      - 1.1 ee44885189385bf67332bf44ad02c0ae.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW51-P5
+      X-Amz-Cf-Id:
+      - jXzO9qu-0uqU2gkBqGgRwMf8JF0ToVFe-5g1h_Q7TvJXg6T2yTXMwg==
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body>\r\n<center><h1>301
+        Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+  recorded_at: Thu, 08 Aug 2024 23:29:58 GMT
+- request:
+    method: get
+    uri: https://nh7b1g9g23.execute-api.us-west-2.amazonaws.com/dev/cats/json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2018'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 08 Aug 2024 23:29:58 GMT
+      X-Amzn-Trace-Id:
+      - Root=1-66b554f6-43671d6d3463d0b737944bd1;Parent=3949b725f1c948b0;Sampled=0;lineage=d6b4b104:0
+      X-Amzn-Requestid:
+      - 780c1aed-4e8e-4691-8d81-24555c1d4060
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Amz-Apigw-Id:
+      - cNo2mFkOPHcEVgg=
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 70cf7bd448e48b5cc9b6bfd4bbc68db4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW51-P5
+      X-Amz-Cf-Id:
+      - YT3mxZ2o8eDs4nDu25dni0WShoyGalcB17X4eHFoCnmPcYQdFdv7-A==
+    body:
+      encoding: UTF-8
+      string: '[{"name":"Abyssin","price":500,"location":"Lviv","image":"https://olxua-ring02.akamaized.net/images_slandocomua/476948786_2_1000x700_abissenysh-chempion-fotografii.jpg"},{"name":"Abyssin","price":"550","location":"Lviv","image":"https://olxua-ring10.akamaized.net/images_slandocomua/342850976_3_1000x700_abidetki-koti_rev006.jpg"},{"name":"American
+        Curl","price":450,"location":"Odessa","image":"https://olxua-ring07.akamaized.net/images_slandocomua/113528769_3_1000x700_amerikanskie-kerly-koshki-s-chelovecheskim-litsom-koshka-kompanon-koti_rev022.jpg"},{"name":"Bengal","price":700,"location":"Kyiv","image":"https://olxua-ring10.akamaized.net/images_slandocomua/496811712_5_1000x700_bengalyata-kievskaya-oblast.jpg"},{"name":"Bobtail","price":349,"location":"Kyiv","image":"https://olxua-ring09.akamaized.net/images_slandocomua/313223928_1_1000x700_prodam-kotyat-kurilskogo-bobteyla-nikopol.jpg"},{"name":"British
+        Shorthair","price":350,"location":"Kyiv","image":"https://olxua-ring09.akamaized.net/images_slandocomua/502753684_1_1000x700_shotladskie-kotyata-kiev.jpg"},{"name":"Devon
+        Rex","price":100,"location":"Kharkiv","image":"https://olxua-ring02.akamaized.net/images_slandocomua/408892502_8_1000x700_malchiki-devon-reksa-drx-a-24-blue-tabby-_rev004.jpg"},{"name":"Maine
+        Coon","price":650,"location":"Lviv","image":"https://olxua-ring08.akamaized.net/images_slandocomua/273255938_8_1000x700_kotyata-meyn-kun-ot-chempiona-mira-iz-elitnogo-pitomnika-_rev032.jpg"},{"name":"Sphynx","price":230,"location":"Odessa","image":"https://olxua-ring11.akamaized.net/images_slandocomua/478774802_2_1000x700_predlagayu-malchikov-porody-donskih-sfinksov-fotografii.jpg"},{"name":"Persian","price":120,"location":"Odessa","image":"https://olxua-ring05.akamaized.net/images_slandocomua/501982388_1_1000x700_devochka-serebristaya-shinshila-harkov_rev002.jpg"},{"name":"Siamese","price":20,"location":"Kharkiv","image":"https://olxua-ring05.akamaized.net/images_slandocomua/500276292_1_1000x700_kot-po-imeni-tom-borispol.jpg"}]'
+  recorded_at: Thu, 08 Aug 2024 23:29:59 GMT
+recorded_with: VCR 6.2.0
