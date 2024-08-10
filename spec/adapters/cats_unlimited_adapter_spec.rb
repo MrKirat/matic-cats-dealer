@@ -19,11 +19,17 @@ RSpec.describe CatsUnlimitedAdapter do
       let(:raw_cats) { [first_cat_attributes, second_cat_attributes] }
 
       let(:first_cat_attributes) do
-        { 'name' => 'breed_1', 'price' => '100', 'location' => 'location_1', 'image' => 'img_1' }
+        {
+          'name' => Faker::Creature::Cat.breed, 'price' => '100',
+          'location' => Faker::Address.city, 'image' => Faker::LoremFlickr.image
+        }
       end
 
       let(:second_cat_attributes) do
-        { 'name' => 'breed_2', 'price' => '200', 'location' => 'location_2', 'image' => 'img_2' }
+        {
+          'name' => Faker::Creature::Cat.breed, 'price' => '200',
+          'location' => Faker::Address.city, 'image' => Faker::LoremFlickr.image
+        }
       end
 
       let(:expected_first_cat) do

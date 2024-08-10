@@ -23,11 +23,17 @@ RSpec.describe HappyCatsAdapter do
       end
 
       let(:first_cat_attributes) do
-        { 'title' => 'breed_1', 'cost' => '100', 'location' => 'location_1', 'img' => 'img_1' }
+        {
+          'title' => Faker::Creature::Cat.breed, 'cost' => '100',
+          'location' => Faker::Address.city, 'img' => Faker::LoremFlickr.image
+        }
       end
 
       let(:second_cat_attributes) do
-        { 'title' => 'breed_2', 'cost' => '200', 'location' => 'location_2', 'img' => 'img_2' }
+        {
+          'title' => Faker::Creature::Cat.breed, 'cost' => '200',
+          'location' => Faker::Address.city, 'img' => Faker::LoremFlickr.image
+        }
       end
 
       let(:expected_first_cat) do
