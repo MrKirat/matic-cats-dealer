@@ -10,17 +10,18 @@ gem 'rails', '~> 6.1.7', '>= 6.1.7.8'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'httparty'
 gem 'jbuilder', '~> 2.7'
-gem 'puma', '~> 5.0'
-gem 'sqlite3', '~> 1.4'
+gem 'puma',     '~> 5.0'
+gem 'sqlite3',  '~> 1.4'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'rubocop'
-  gem 'rubocop-rails'
-  gem 'rubocop-rspec'
+  gem 'rubocop',             require: false
+  gem 'rubocop-factory_bot', require: false
+  gem 'rubocop-rails',       require: false
+  gem 'rubocop-rspec',       require: false
 end
 
 group :development do
