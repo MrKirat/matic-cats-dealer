@@ -18,32 +18,33 @@ RSpec.describe HappyCatsAdapter do
       let(:response) { instance_double(HTTParty::Response, success?: true, parsed_response: raw_cats) }
       let(:raw_cats) do
         {
-          'cats' => { 'cat' => [first_cat, second_cat] }
+          'cats' => { 'cat' => [first_cat_attributes, second_cat_attributes] }
         }
       end
 
-      let(:first_cat) do
-        { 'title' => 'title_1', 'cost' => '100', 'location' => 'location_1', 'img' => 'img_1' }
+      let(:first_cat_attributes) do
+        { 'title' => 'breed_1', 'cost' => '100', 'location' => 'location_1', 'img' => 'img_1' }
       end
 
-      let(:second_cat) do
-        { 'title' => 'title_2', 'cost' => '200', 'location' => 'location_2', 'img' => 'img_2' }
+      let(:second_cat_attributes) do
+        { 'title' => 'breed_2', 'cost' => '200', 'location' => 'location_2', 'img' => 'img_2' }
       end
 
-      let(:expected_cats) do
-        [
-          {
-            name: first_cat['title'], price: first_cat['cost'],
-            location: first_cat['location'], image: first_cat['img']
-          },
-          {
-            name: second_cat['title'], price: second_cat['cost'],
-            location: second_cat['location'], image: second_cat['img']
-          }
-        ]
+      let(:expected_first_cat) do
+        have_attributes(
+          breed: first_cat_attributes['title'], price: first_cat_attributes['cost'].to_i,
+          location: first_cat_attributes['location'], image: first_cat_attributes['img']
+        )
       end
 
-      it { is_expected.to contain_exactly(expected_cats) }
+      let(:expected_second_cat) do
+        have_attributes(
+          breed: second_cat_attributes['title'], price: second_cat_attributes['cost'].to_i,
+          location: second_cat_attributes['location'], image: second_cat_attributes['img']
+        )
+      end
+
+      it { is_expected.to contain_exactly(expected_first_cat, expected_second_cat) }
     end
   end
 end

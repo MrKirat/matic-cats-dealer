@@ -6,12 +6,12 @@ RSpec.describe Cat do
   describe '.new' do
     subject { described_class.new(attributes) }
 
-    let(:attributes) { { name:, price:, location:, image: } }
-    let(:name) { 'name' }
+    let(:attributes) { { breed:, price:, location:, image: } }
+    let(:breed) { 'breed' }
     let(:price) { '100' }
     let(:location) { 'location' }
     let(:image) { 'image' }
 
-    it { is_expected.to have_attributes(name:, price: price.to_i, location:, image:) }
+    it { is_expected.to have_attributes(breed:, price: price.to_i, location:, image:) }
   end
 end

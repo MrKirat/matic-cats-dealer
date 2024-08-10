@@ -2,7 +2,7 @@
 
 class HappyCatsAdapter < ApplicationAdapter
   MAPPING = {
-    title: :name,
+    title: :breed,
     cost: :price,
     location: :location,
     img: :image
@@ -11,12 +11,8 @@ class HappyCatsAdapter < ApplicationAdapter
   def all
     return [] unless object.success?
 
-    cats.map do |cat|
-      cat.transform_keys { |key| MAPPING[key] }
+    object.parsed_response['cats']['cat'].map do |attributes|
+      Cat.new(attributes.transform_keys { |key| MAPPING[key] || key })
     end
   end
-
-  private
-
-  def cats = object.parsed_response['cats']['cat']
 end
