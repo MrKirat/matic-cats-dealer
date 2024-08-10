@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe CatsClient do
+RSpec.describe CatClient do
   describe '.cats_unlimited' do
     subject(:response) { described_class.cats_unlimited }
 

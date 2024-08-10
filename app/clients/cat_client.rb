@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CatsClient < ApplicationClient
+class CatClient < ApplicationClient
   base_uri 'nh7b1g9g23.execute-api.us-west-2.amazonaws.com/dev/cats/'
 
   class << self
