@@ -30,7 +30,7 @@ RSpec.describe Cats::ListOperation do
       let(:params) { { location: '' } }
 
       it 'return location failure' do
-        expect(call).to be_failure_monad [:invalid_params, { location: ['must be filled'] }]
+        expect(call).to be_failure_monad [:unprocessable_entity, { location: ['must be filled'] }]
       end
     end
 
@@ -46,7 +46,7 @@ RSpec.describe Cats::ListOperation do
       let(:params) { { breed: '' } }
 
       it 'returns breed failure' do
-        expect(call).to be_failure_monad [:invalid_params, { breed: ['must be filled'] }]
+        expect(call).to be_failure_monad [:unprocessable_entity, { breed: ['must be filled'] }]
       end
     end
 
@@ -70,7 +70,9 @@ RSpec.describe Cats::ListOperation do
       let(:params) { { sort: 'incorrect_sorting_value' } }
 
       it 'returns breed failure' do
-        expect(call).to be_failure_monad [:invalid_params, { sort: ['must be one of: cheap_first, expensive_first'] }]
+        expect(call).to be_failure_monad [
+          :unprocessable_entity, { sort: ['must be one of: cheap_first, expensive_first'] }
+        ]
       end
     end
 
@@ -78,7 +80,9 @@ RSpec.describe Cats::ListOperation do
       let(:params) { { sort: '' } }
 
       it 'returns breed failure' do
-        expect(call).to be_failure_monad [:invalid_params, { sort: ['must be one of: cheap_first, expensive_first'] }]
+        expect(call).to be_failure_monad [
+          :unprocessable_entity, { sort: ['must be one of: cheap_first, expensive_first'] }
+        ]
       end
     end
   end
