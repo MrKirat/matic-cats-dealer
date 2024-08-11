@@ -18,3 +18,11 @@ RSpec/MultipleExpectations:
 
 RSpec/MultipleMemoizedHelpers:
   Max: 10
+
+Rails/DeprecatedActiveModelErrorsMethods:
+  Exclude:
+    # The error list from the dry-rb library has the same interface as the Rails error list.
+    # The Rubocop assumes that the code inside this file is related to the Rails but it is actually related to the Dry-rb.
+    # The fix that Rubocop suggests is not compatible with the Dry-rb.
+    # I decided to disable the Rails/DeprecatedActiveModelErrorsMethods cop because it is not relevant in this particular case.
+    - 'app/operations/application_operation.rb'

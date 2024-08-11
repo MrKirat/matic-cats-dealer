@@ -13,6 +13,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'puma',     '~> 5.0'
 gem 'sqlite3',  '~> 1.4'
 
+gem 'dry-monads'
+gem 'dry-validation'
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv'

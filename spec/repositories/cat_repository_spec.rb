@@ -3,13 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe CatRepository do
-  let(:lviv_expensive_cat)    { build(:cat, :expensive, :lviv) }
-  let(:lviv_cheap_cat)        { build(:cat, :cheap,     :lviv) }
-  let(:kharkiv_expensive_cat) { build(:cat, :expensive, :kharkiv) }
-  let(:kharkiv_cheap_cat)     { build(:cat, :cheap,     :kharkiv) }
+  include_context 'with diverse cats'
 
-  let(:cats_unlimited_adapter) { instance_double(CatsUnlimitedAdapter, all: [lviv_expensive_cat, kharkiv_cheap_cat]) }
-  let(:happy_cats_adapter)     { instance_double(HappyCatsAdapter,     all: [lviv_cheap_cat, kharkiv_expensive_cat]) }
+  let(:cats_unlimited_adapter) { instance_double(CatsUnlimitedAdapter, all: [lviv_pricy_cat, kharkiv_cheap_cat]) }
+  let(:happy_cats_adapter)     { instance_double(HappyCatsAdapter,     all: [lviv_cheapest_cat, kharkiv_priciest_cat]) }
 
   let(:cats_unlimited_response) { instance_double(HTTParty::Response) }
   let(:happy_cats_response)     { instance_double(HTTParty::Response) }
@@ -23,24 +20,8 @@ RSpec.describe CatRepository do
   describe '.all' do
     subject(:response) { described_class.all }
 
-    let(:expected_cats) { [lviv_expensive_cat, lviv_cheap_cat, kharkiv_expensive_cat, kharkiv_cheap_cat] }
+    let(:expected_cats) { [lviv_pricy_cat, lviv_cheapest_cat, kharkiv_priciest_cat, kharkiv_cheap_cat] }
 
     it { is_expected.to match_array(expected_cats) }
-  end
-
-  describe '.cheapest_by_location' do
-    subject(:response) { described_class.cheapest_by_location(location) }
-
-    context 'when location is Lviv' do
-      let(:location) { 'Lviv' }
-
-      it { is_expected.to eq lviv_cheap_cat }
-    end
-
-    context 'when location is Kharkiv' do
-      let(:location) { 'Kharkiv' }
-
-      it { is_expected.to eq kharkiv_cheap_cat }
-    end
   end
 end

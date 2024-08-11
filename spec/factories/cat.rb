@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :cat do
-    breed { Faker::Creature::Cat.breed }
+    breed { Faker::Creature::Cat.unique.breed }
     price { 250 }
     location { Faker::Address.city }
     image { Faker::LoremFlickr.image }
@@ -15,11 +15,19 @@ FactoryBot.define do
       location { 'Kharkiv' }
     end
 
-    trait :cheap do
+    trait :cheapest do
       price { 50 }
     end
 
-    trait :expensive do
+    trait :cheap do
+      price { 100 }
+    end
+
+    trait :pricy do
+      price { 800 }
+    end
+
+    trait :priciest do
       price { 1000 }
     end
   end
