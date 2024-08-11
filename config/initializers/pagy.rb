@@ -94,7 +94,7 @@ require 'pagy/extras/array'
 # require 'pagy/extras/js_tools'
 require 'pagy/extras/metadata'
 # For performance reasons, you should explicitly set ONLY the metadata you use in the frontend
-# Pagy::DEFAULT[:metadata] = %i[scaffold_url page prev next last]   # example
+Pagy::DEFAULT[:metadata] = %i[page pages prev next last]
 
 # Searchkick extra: Paginate `Searchkick::Results` objects
 # See https://ddnexus.github.io/pagy/docs/extras/searchkick
