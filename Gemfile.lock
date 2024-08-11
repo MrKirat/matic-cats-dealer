@@ -166,6 +166,7 @@ GEM
     nio4r (2.7.3)
     nokogiri (1.16.7-arm64-darwin)
       racc (~> 1.4)
+    pagy (9.0.5)
     parallel (1.25.1)
     parser (3.3.4.0)
       ast (~> 2.4.1)
@@ -294,6 +295,7 @@ DEPENDENCIES
   httparty
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  pagy
   puma (~> 5.0)
   rails (~> 6.1.7, >= 6.1.7.8)
   rspec-rails (~> 6.1.0)

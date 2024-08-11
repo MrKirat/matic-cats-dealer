@@ -11,6 +11,7 @@ gem 'blueprinter'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'httparty'
 gem 'jbuilder', '~> 2.7'
+gem 'pagy'
 gem 'puma', '~> 5.0'
 gem 'sqlite3', '~> 1.4'
 
