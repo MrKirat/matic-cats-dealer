@@ -65,6 +65,7 @@ GEM
     ast (2.4.2)
     base64 (0.2.0)
     bigdecimal (3.1.8)
+    blueprinter (1.0.2)
     bootsnap (1.18.4)
       msgpack (~> 1.2)
     builder (3.3.0)
@@ -282,6 +283,7 @@ PLATFORMS
   arm64-darwin-23
 
 DEPENDENCIES
+  blueprinter
   bootsnap (>= 1.4.4)
   byebug
   dotenv
