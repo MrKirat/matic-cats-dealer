@@ -31,8 +31,8 @@ class CatRepository
   #
   # @return [Array<Object>] A combined array of all cats from all sources.
   def self.all
-    SOURCES.flat_map do |source|
-      source[:adapter].new(source[:client].public_send(source[:method])).all
-    end
+    SOURCES.map do |source|
+      ::Thread.new { source[:adapter].new(source[:client].public_send(source[:method])).all }
+    end.flat_map(&:value)
   end
 end
