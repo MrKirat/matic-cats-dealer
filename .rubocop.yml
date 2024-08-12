@@ -13,9 +13,6 @@ AllCops:
 Style/Documentation:
   Enabled: false
 
-RSpec/MultipleExpectations:
-  Max: 3
-
 RSpec/MultipleMemoizedHelpers:
   Max: 10
 
@@ -24,7 +21,7 @@ RSpec/MultipleExpectations:
 
 RSpec/MessageSpies:
   Exclude:
-    - spec/jobs/cats/send_index_result_job_spec.rb
+    - spec/jobs/cats/send_search_result_job_spec.rb
 
 Rails/DeprecatedActiveModelErrorsMethods:
   Exclude:
