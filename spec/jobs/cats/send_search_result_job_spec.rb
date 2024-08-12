@@ -13,7 +13,9 @@ RSpec.describe Cats::SendSearchResultJob do
 
       before do
         allow(Cats::ListOperation).to receive(:call).with(params).and_return(Dry::Monads::Success(cats))
-        allow(CatBlueprint).to receive(:render).with(cats, root: :cats).and_return('serialization result')
+        allow(CatBlueprint).to receive(:render).with(
+          cats, root: :cats, meta: { pagy: have_pagy_keys }
+        ).and_return('serialization result')
       end
 
       it 'broadcasts the success result to cats_channel' do
