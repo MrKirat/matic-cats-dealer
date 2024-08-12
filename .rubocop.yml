@@ -22,6 +22,10 @@ RSpec/MultipleMemoizedHelpers:
 RSpec/MultipleExpectations:
   Max: 5
 
+RSpec/MessageSpies:
+  Exclude:
+    - spec/jobs/cats/send_index_result_job_spec.rb
+
 Rails/DeprecatedActiveModelErrorsMethods:
   Exclude:
     # The error list from the dry-rb library has the same interface as the Rails error list.

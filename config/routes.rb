@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :cats, only: %i[index]
+      resources :async_cats, only: %i[index]
     end
   end
 end
