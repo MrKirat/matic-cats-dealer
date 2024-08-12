@@ -103,4 +103,17 @@ RSpec.describe '/api/v1/cats' do
       end
     end
   end
+
+  describe 'POST search' do
+    let(:params) { { location: 'Lviv', breed: 'Siamese', sort: 'cheap_first', page: '1', limit: '1' } }
+
+    it 'enqueues the async job with the correct parameters' do
+      expect { post '/api/v1/cats/search', params: }.to have_enqueued_job(
+        Cats::SendSearchResultJob
+      ).with(include(params)).on_queue('default')
+
+      expect(response).to have_http_status(:ok)
+      expect(json).to eq message: 'The result will be delivered via the cats_channel.'
+    end
+  end
 end

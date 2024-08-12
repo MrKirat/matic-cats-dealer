@@ -2,6 +2,7 @@
 
 class ApplicationJob < ActiveJob::Base
   include ::Dry::Monads[:result]
+  include ::Pagy::Backend
 
   # Automatically retry jobs that encountered a deadlock
   # retry_on ActiveRecord::Deadlocked

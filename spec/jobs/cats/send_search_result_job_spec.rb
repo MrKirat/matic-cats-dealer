@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Cats::SendIndexResultJob do
+RSpec.describe Cats::SendSearchResultJob do
   let(:params) { { location: 'Lviv', breed: 'Siamese' } }
 
   describe '#perform' do

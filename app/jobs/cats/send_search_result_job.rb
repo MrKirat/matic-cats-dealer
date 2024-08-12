@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 module Cats
-  class SendIndexResultJob < ApplicationJob
+  class SendSearchResultJob < ApplicationJob
+    delegate :api_v1_cats_path, to: '::Rails.application.routes.url_helpers'
+
     def perform(params)
       ::ActionCable.server.broadcast 'cats_channel', result(params)
     end
@@ -11,7 +13,8 @@ module Cats
     def result(params)
       case ::Cats::ListOperation.call(params)
       in Success[*cats]
-        ::CatBlueprint.render(cats, root: :cats)
+        pagy, cats = pagy_array(cats, url: api_v1_cats_path)
+        ::CatBlueprint.render(cats, root: :cats, meta: { pagy: pagy_metadata(pagy) })
       in Failure[status, errors]
         { errors:, status: }
       else

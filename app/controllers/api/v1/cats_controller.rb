@@ -48,6 +48,11 @@ module Api
           head :internal_server_error
         end
       end
+
+      def search
+        ::Cats::SendSearchResultJob.perform_later(params.to_unsafe_h)
+        render json: { message: 'The result will be delivered via the cats_channel.' }
+      end
     end
   end
 end
