@@ -28,8 +28,9 @@ RSpec/MessageSpies:
 
 Rails/DeprecatedActiveModelErrorsMethods:
   Exclude:
-    # The error list from the dry-rb library has the same interface as the Rails error list.
-    # The Rubocop assumes that the code inside this file is related to the Rails but it is actually related to the Dry-rb.
-    # The fix that Rubocop suggests is not compatible with the Dry-rb.
-    # I decided to disable the Rails/DeprecatedActiveModelErrorsMethods cop because it is not relevant in this particular case.
+    # The error handling mechanism in the `dry-rb` library shares an interface with Rails' error handling.
+    # However, RuboCop mistakenly assumes that the code within this file is specifically related to Rails.
+    # The correction suggested by RuboCop is incompatible with the `dry-rb` library.
+    # As a result, the `Rails/DeprecatedActiveModelErrorsMethods` cop has been disabled for
+    # the `app/operations/application_operation.rb` file, as it is not applicable in this context.
     - 'app/operations/application_operation.rb'

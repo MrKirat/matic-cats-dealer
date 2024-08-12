@@ -49,6 +49,35 @@ module Api
         end
       end
 
+      # Handles the `POST /cats/search` request.
+      #
+      # This action triggers an asynchronous search operation for cats based on the provided query parameters.
+      # The search results will be processed in the background and delivered via the `cats_channel`
+      # using ActionCable. This allows the client to subscribe to the channel and receive the search
+      # results once they are ready.
+      #
+      # @param params [Hash] The query parameters for the search. These parameters include:
+      #   - `location` (optional, String): Filters the cats based on their location.
+      #   - `breed` (optional, String): Filters the cats based on their breed.
+      #   - `sort` (optional, String): Determines the sorting order of the cats based on their price.
+      #     Accepts the following values:
+      #     - `cheap_first`: Sorts the cats in ascending order of price (cheapest first).
+      #     - `expensive_first`: Sorts the cats in descending order of price (most expensive first).
+      #   - `limit` (optional, Integer): Limits the number of cats returned in the response.
+      #   - `page` (optional, Integer): Specifies the page of results to retrieve, in combination with the `limit`.
+      #
+      # @example Example Request
+      #   POST /api/v1/cats/search
+      #   {
+      #     "location": "Lviv",
+      #     "breed": "Siamese",
+      #     "sort": "cheap_first",
+      #     "limit": 10,
+      #     "page": 1
+      #   }
+      #
+      # @return [void] Renders a JSON message confirming that the result will be delivered via the cats_channel.
+      #   - Example Response: `{ "message": "The result will be delivered via the cats_channel." }`
       def search
         ::Cats::SendSearchResultJob.perform_later(params.to_unsafe_h)
         render json: { message: 'The result will be delivered via the cats_channel.' }
